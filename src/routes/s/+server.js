@@ -11,7 +11,7 @@ export async function POST({request}) {
 
     const { post,key } = await request.json();
 
-    if (key!=process.env.KEY) {
+    if (key!=process.env.KEY || key==undefined || post == "undefined") {
         return json({})
     }
 
